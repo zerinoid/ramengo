@@ -1,7 +1,13 @@
 import "./style.css";
-import javascriptLogo from "./javascript.svg";
+
 import viteLogo from "/vite.svg";
+
 import { setupCounter } from "./counter.js";
+import fetchData from "./lib/fetchData";
+import javascriptLogo from "./javascript.svg";
+
+const broths = await fetchData("broths");
+const proteins = await fetchData("proteins");
 
 document.querySelector("#app").innerHTML = `
   <div>
