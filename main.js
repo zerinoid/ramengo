@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.scss";
 
 import { setupCounter } from "./counter.js";
 import fetchData from "./lib/fetchData";

@@ -23,11 +23,12 @@
   align-items: center;
   background: url('/pattern-vermelha.svg') 0px 0px/400px 400px;
   color: #fff;
+
+  &__ilustracao {
+    width: 265px;
+  }
 }
 
-.hero__ilustracao {
-  width: 265px;
-}
 
 /* a { */
 /*   font-weight: 500; */
