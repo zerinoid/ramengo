@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800;900&display=swap');
 
-:root {
-  font-family:"M PLUS Rounded 1c", system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+* {
+  margin: 0
+}
 
+:root {
+  --black: hsla(0, 0%, 0%, 1);
+  --blue: hsla(238, 87%, 52%, 1);
+  --watermelon: hsla(4, 100%, 63%, 1);
+  --ocre: hsla(43, 100%, 57%, 1);
+  --milk: hsla(60, 57%, 95%, 1);
+
+  font-family:"M PLUS Rounded 1c", system-ui, Avenir, Helvetica, Arial, sans-serif;
   /* color-scheme: light dark; */
-  color: hsla(0, 0%, 0%, 1);
-  background-color: hsla(60, 57%, 95%, 1);
+  color: var(--black);
+  background-color: var(--milk);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,29 +22,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.hero {
-  height: 677px;
-  padding: 20px 30px 66px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: url('/pattern-vermelha.svg') 0px 0px/400px 400px;
-  color: #fff;
-
-  &__ilustracao {
-    width: 265px;
-  }
+html {
+  font-size: 62.5%;
 }
-
-
-/* a { */
-/*   font-weight: 500; */
-/*   color: #646cff; */
-/*   text-decoration: inherit; */
-/* } */
-/* a:hover { */
-/*   color: #535bf2; */
-/* } */
 
 body {
   margin: 0;
@@ -46,6 +33,53 @@ body {
   place-items: center;
   min-width: 360px;
   min-height: 100vh;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.hero {
+  padding: 20px 30px 66px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('/pattern-vermelha.svg') 0px 0px/400px 400px;
+  color: #fff;
+
+
+  &__ramengo {
+    margin-bottom: 2.4rem;
+  }
+
+  &__ilustracao {
+    width: 265px;
+    margin-bottom: 1.2rem;
+  }
+
+  &__ramen {
+    color: (var(--ocre));
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 56px;
+    margin-bottom: 1.1rem;
+  }
+
+  &__go {
+    font-size: 12rem;
+    line-height: 10rem;
+    font-weight: 900;
+    margin-bottom: 2.4rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+}
+
+.recipe {
+  padding: 40px 16px 38px;
 }
 
 #app {
