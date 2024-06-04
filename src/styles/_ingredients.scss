@@ -35,6 +35,18 @@
     box-shadow: 0px 4px 12px 0px hsla(51, 35%, 81%, 0.6);
     margin-bottom: 2.4rem;
     padding: 4.8rem 0 4rem;
+
+    &.active {
+      background-color: var(--blue);
+
+      .ingredients__name, .ingredients__description {
+        color: white;
+      }
+
+      .ingredients__price {
+        color: var(--ocre)
+      }
+    }
   }
 
   &__name {

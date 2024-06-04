@@ -1,8 +1,14 @@
 import fetchData from '../lib/fetchData'
 
+let data = {
+  broths: [],
+  proteins: []
+}
+
 export const fetchIngredients = async ingredientGroup => {
   const ingredients = await fetchData(ingredientGroup)
 
+  data[ingredientGroup] = ingredients
   await ingredients.forEach(ingredient => {
     generateButton(ingredientGroup, ingredient)
   })
@@ -16,6 +22,8 @@ const generateButton = (ingredientGroup, ingredient) => {
     'ingredients__button',
     'ingredients__button--' + ingredientGroup
   )
+
+  ingredientButton.dataset.id = ingredient.id
 
   const pic = new Image(104, 104)
   pic.src = ingredient.imageInactive
@@ -31,20 +39,24 @@ const generateButton = (ingredientGroup, ingredient) => {
   parent.appendChild(ingredientButton)
   ingredientButton.addEventListener('click', event => {
     addIngredient(ingredientGroup, ingredient.id)
-    toggleIngredient(ingredientGroup, event.currentTarget)
+    toggleIngredient(ingredientGroup, event.currentTarget, ingredient.id)
   })
 }
 
-const toggleIngredient = (ingredientGroup, currentButton) => {
+const toggleIngredient = (ingredientGroup, currentButton, ingredientId) => {
   const groupButtons = document.querySelectorAll(
     '.ingredients__button--' + ingredientGroup
   )
 
   groupButtons.forEach(button => {
     button.classList.remove('active')
+    button.querySelector('img').src =
+      data[ingredientGroup][button.dataset.id - 1].imageInactive
   })
 
   currentButton.classList.add('active')
+  currentButton.querySelector('img').src =
+    data[ingredientGroup][ingredientId - 1].imageActive
 }
 
 const addIngredient = (ingredientGroup, ingredientId) => {
