@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "https://ramengoo.netlify.app/success/*"
-  to = "/success/:splat"
+  from = "https://ramengoo.netlify.app/order/*"
+  to = "/order/:splat"
   status = 200

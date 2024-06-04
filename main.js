@@ -13,7 +13,7 @@ const reqObject = {
 
 const handleSubmit = async data => {
   const res = await submitData(data)
-  window.location.href = `/success/?description=${res.description}&image=${res.image}`
+  window.location.href = `/order/?description=${res.description}&image=${res.image}`
 }
 
 const submitOrderButton = document.querySelector('#submit')
