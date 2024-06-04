@@ -35,8 +35,13 @@ const generateButton = (ingredientGroup, ingredient) => {
 }
 
 const addIngredient = (ingredientGroup, ingredientId) => {
+  const reqHelper = {
+    broths: 'brothId',
+    proteins: 'proteinId'
+  }
+
   const event = new CustomEvent('changeIngredient', {
-    detail: [ingredientGroup, ingredientId]
+    detail: [reqHelper[ingredientGroup], ingredientId]
   })
 
   window.dispatchEvent(event)
