@@ -40,9 +40,9 @@ const addIngredient = (ingredientGroup, ingredientId) => {
     proteins: 'proteinId'
   }
 
-  const event = new CustomEvent('changeIngredient', {
+  const onChangeIngredient = new CustomEvent('onChangeIngredient', {
     detail: [reqHelper[ingredientGroup], ingredientId]
   })
 
-  window.dispatchEvent(event)
+  window.dispatchEvent(onChangeIngredient)
 }

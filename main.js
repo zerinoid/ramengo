@@ -3,8 +3,7 @@ import { fetchIngredients } from './src/ingredients.js'
 
 // import { setupCounter } from './counter.js'
 
-window.addEventListener('changeIngredient', event => {
-  console.log(event.detail, '### event.ingredients  ###')
+window.addEventListener('onChangeIngredient', event => {
   reqObject[event.detail[0]] = event.detail[1]
 })
 
