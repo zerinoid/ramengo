@@ -11,8 +11,8 @@ export const fetchIngredients = async ingredientGroup => {
 const generateButton = (ingredientGroup, ingredient) => {
   const parent = document.querySelector('#' + ingredientGroup)
 
-  const ingredientContainer = document.createElement('button')
-  ingredientContainer.classList.add(
+  const ingredientButton = document.createElement('button')
+  ingredientButton.classList.add(
     'ingredients__button',
     'ingredients__button--' + ingredientGroup
   )
@@ -20,16 +20,16 @@ const generateButton = (ingredientGroup, ingredient) => {
   const pic = new Image(104, 104)
   pic.src = ingredient.imageInactive
   pic.alt = ingredient.name
-  ingredientContainer.appendChild(pic)
+  ingredientButton.appendChild(pic)
 
   const name = `<p class="ingredients__name">${ingredient.name}</p>`
   const description = `<p class="ingredients__description">${ingredient.description}</p>`
   const price = `<p class="ingredients__price">US$ ${ingredient.price}</p>`
 
-  ingredientContainer.innerHTML += name + description + price
+  ingredientButton.innerHTML += name + description + price
 
-  parent.appendChild(ingredientContainer)
-  ingredientContainer.addEventListener('click', event => {
+  parent.appendChild(ingredientButton)
+  ingredientButton.addEventListener('click', event => {
     addIngredient(ingredientGroup, ingredient.id)
     toggleIngredient(ingredientGroup, event.currentTarget)
   })
