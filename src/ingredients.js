@@ -6,20 +6,32 @@ export const fetchIngredients = async ingredientGroup => {
   // TODO REMOVER
   console.log(ingredients, '### ingredients  ###')
 
-  const parent = document.querySelector('#' + ingredientGroup)
   await ingredients.forEach(ingredient => {
-    const ingredientContainer = document.createElement('button')
-    ingredientContainer.classList.add('ingredients__button')
-    const pic = new Image(104, 104)
-    pic.src = ingredient.imageInactive
-    ingredientContainer.appendChild(pic)
-    ingredientContainer.appendChild(document.createTextNode(ingredient.name))
-    parent.appendChild(ingredientContainer)
-
-    ingredientContainer.addEventListener('click', () =>
-      addIngredient(ingredientGroup, ingredient.id)
-    )
+    generateButton(ingredientGroup, ingredient)
   })
+}
+
+const generateButton = (ingredientGroup, ingredient) => {
+  const parent = document.querySelector('#' + ingredientGroup)
+
+  const ingredientContainer = document.createElement('button')
+  ingredientContainer.classList.add('ingredients__button')
+
+  const pic = new Image(104, 104)
+  pic.src = ingredient.imageInactive
+  pic.alt = ingredient.name
+  ingredientContainer.appendChild(pic)
+
+  const name = `<p class="ingredients__name">${ingredient.name}</p>`
+  const description = `<p class="ingredients__description">${ingredient.description}</p>`
+  const price = `<p class="ingredients__price">US$ ${ingredient.price}</p>`
+
+  ingredientContainer.innerHTML += name + description + price
+
+  parent.appendChild(ingredientContainer)
+  ingredientContainer.addEventListener('click', () =>
+    addIngredient(ingredientGroup, ingredient.id)
+  )
 }
 
 const addIngredient = (ingredientGroup, ingredientId) => {
