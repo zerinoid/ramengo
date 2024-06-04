@@ -1,8 +1,6 @@
 import './src/styles/main.scss'
 import { fetchIngredients } from './src/ingredients.js'
 
-// import { setupCounter } from './counter.js'
-
 window.addEventListener('onChangeIngredient', event => {
   reqObject[event.detail[0]] = event.detail[1]
 })
@@ -19,4 +17,3 @@ document
 
 fetchIngredients('broths')
 fetchIngredients('proteins')
-// setupCounter(document.querySelector('#counter'))
