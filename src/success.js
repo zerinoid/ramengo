@@ -12,3 +12,6 @@ ilustracao.src = image
 
 const texto = document.querySelector('.hero__order')
 texto.innerHTML = description
+
+const submitOrderButton = document.querySelector('#submit')
+submitOrderButton.addEventListener('click', () => (window.location.href = '/'))
