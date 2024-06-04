@@ -1,0 +1,39 @@
+.hero {
+  padding: 20px 30px 66px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('/pattern-vermelha.svg') 0px 0px/400px 400px;
+  color: #fff;
+
+
+  &__ramengo {
+    margin-bottom: 2.4rem;
+  }
+
+  &__ilustracao {
+    width: 265px;
+    margin-bottom: 1.2rem;
+  }
+
+  &__ramen {
+    color: (var(--ocre));
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 56px;
+    margin-bottom: 1.1rem;
+  }
+
+  &__go {
+    font-size: 12rem;
+    line-height: 10rem;
+    font-weight: 900;
+    margin-bottom: 2.4rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+}

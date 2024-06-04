@@ -9,7 +9,7 @@ export const fetchIngredients = async ingredientGroup => {
   const parent = document.querySelector('#' + ingredientGroup)
   await ingredients.forEach(ingredient => {
     const ingredientContainer = document.createElement('button')
-    ingredientContainer.classList.add('ingredient-button')
+    ingredientContainer.classList.add('ingredients__button')
     const pic = new Image(104, 104)
     pic.src = ingredient.imageInactive
     ingredientContainer.appendChild(pic)

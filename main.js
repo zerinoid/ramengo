@@ -1,4 +1,4 @@
-import './style.scss'
+import './src/styles/main.scss'
 import { fetchIngredients } from './src/ingredients.js'
 
 // import { setupCounter } from './counter.js'
