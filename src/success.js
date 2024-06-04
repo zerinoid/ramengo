@@ -1,7 +1,6 @@
 import './styles/main.scss'
 
 const queryString = window.location.search
-console.log(queryString)
 const urlParams = new URLSearchParams(queryString)
 
 const description = urlParams.get('description')
