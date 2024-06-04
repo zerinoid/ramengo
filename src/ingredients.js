@@ -3,29 +3,26 @@ import fetchData from '../lib/fetchData'
 export const fetchIngredients = async ingredientGroup => {
   const ingredients = await fetchData(ingredientGroup)
 
+  // TODO REMOVER
   console.log(ingredients, '### ingredients  ###')
-  const elements = await ingredients.map(ingredient => {
-    // ingredient.addEventListener('click', () => {
-    //   addIngredient(ingredientGroup, ingredient.id)
-    // })
 
-    return `<button class="button">${ingredient.name}</button>`
-  })
+  const parent = document.querySelector('#' + ingredientGroup)
+  await ingredients.forEach(ingredient => {
+    const ingredientContainer = document.createElement('button')
+    ingredientContainer.classList.add('ingredient-button')
+    const pic = new Image(104, 104)
+    pic.src = ingredient.imageInactive
+    ingredientContainer.appendChild(pic)
+    ingredientContainer.appendChild(document.createTextNode(ingredient.name))
+    parent.appendChild(ingredientContainer)
 
-  document.querySelector('#' + ingredientGroup).innerHTML = elements
-  const ingredientButtons = await document.querySelectorAll('.button')
-  // console.log(ingredientButtons, '### ingredientButtons  ###')
-
-  ingredientButtons.forEach(ingredient => {
-    // console.log(ingredient, '### ingredient  ###')
-    ingredient.addEventListener('click', () =>
-      addIngredient(ingredientGroup, 'banana')
+    ingredientContainer.addEventListener('click', () =>
+      addIngredient(ingredientGroup, ingredient.id)
     )
   })
 }
 
 const addIngredient = (ingredientGroup, ingredientId) => {
-  // console.log(ingredientGroup, ingredientId)
   const event = new CustomEvent('changeIngredient', {
     detail: [ingredientGroup, ingredientId]
   })
