@@ -13,14 +13,20 @@ const reqObject = {
 
 const handleSubmit = async data => {
   const res = await submitData(data)
-  if (res.ok) {
-    console.log(res.json(), '### res  ###')
-  }
+  console.log(res, '### res  ###')
+  window.location.href = `/success/?description=${res.description}&image=${res.image}`
 }
 
-document
-  .querySelector('#submit')
-  .addEventListener('click', () => handleSubmit(reqObject))
+const submitOrderButton = document.querySelector('#submit')
+// submitOrderButton.disabled = true
+
+// if (!reqObject.brothId || !reqObject.proteinId) {
+//   submitOrderButton.disabled = true
+// } else {
+//   submitOrderButton.disabled = false
+// }
+
+submitOrderButton.addEventListener('click', () => handleSubmit(reqObject))
 
 fetchIngredients('broths')
 fetchIngredients('proteins')
