@@ -14,7 +14,7 @@ const reqObject = {
 const handleSubmit = async data => {
   const res = await submitData(data)
   console.log(res, '### res  ###')
-  window.location.href = `/success/?description=${res.description}&image=${res.image}`
+  window.location.href = `https://ramengoo.netlify.app/success/?description=${res.description}&image=${res.image}`
 }
 
 const submitOrderButton = document.querySelector('#submit')
