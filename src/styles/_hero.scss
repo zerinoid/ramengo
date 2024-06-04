@@ -1,18 +1,35 @@
 .hero {
   padding: 20px 30px 66px;
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   background: url('/pattern-vermelha.svg') 0px 0px/400px 400px;
   color: #fff;
 
+  @media (min-width: 1024px) {
+    background-size: 650px 650px;
+    display: block;
+  }
+
   &__ramengo {
     margin-bottom: 2.4rem;
+
+    @media (min-width: 1024px) {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
   }
 
   &__ilustracao {
     width: 265px;
     margin-bottom: 1.2rem;
+
+    @media (min-width: 1024px) {
+      width: 673px;
+      margin-left: 132px;
+    }
   }
 
   &__ramen {
@@ -21,6 +38,14 @@
     font-size: 48px;
     line-height: 56px;
     margin-bottom: 1.1rem;
+
+    @media (min-width: 1024px) {
+      position: absolute;
+      top: 156px;
+      left: 259px;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
   }
 
   &__go {
@@ -28,12 +53,28 @@
     line-height: 10rem;
     font-weight: 900;
     margin-bottom: 2.4rem;
+
+    @media (min-width: 1024px) {
+      position: absolute;
+      top: 280px;
+      left: 320px;
+      font-size: 16rem;
+      line-height: 10rem;
+    }
   }
 
   &__text {
     font-size: 1.6rem;
     line-height: 2rem;
     font-weight: 500;
+
+    @media (min-width: 1024px) {
+      width: 201px;
+      position: absolute;
+      top: 404px;
+      left: 273px;
+      text-align: left;
+    }
   }
 
   &__order {
@@ -53,6 +94,27 @@
     .hero__ilustracao {
       width: 341px;
       margin-bottom: -40px;
+    }
+  }
+
+  &__order {
+    display: none;
+    position: absolute;
+    width: 190px;
+    left: 273px;
+    top: 522px;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 800;
+    background-color: var(--blue);
+    border-radius: 100px;
+    padding: 20px 16px;
+
+    @media (min-width: 1024px) {
+      display: block;
     }
   }
 }
