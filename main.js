@@ -19,4 +19,5 @@ document
   .addEventListener('click', () => console.log(reqObject, '### reqObject  ###'))
 
 fetchIngredients('broths')
+fetchIngredients('proteins')
 // setupCounter(document.querySelector('#counter'))
