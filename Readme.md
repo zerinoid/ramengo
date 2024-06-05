@@ -7,7 +7,7 @@ First of all, thank you for the oportunity. It was a real challenge to make this
 
 Some features I just couldn't. The redirect to the order page worked flawlessly in my dev server but I couldn't reproduce it in netlifies production ambient, no matter what I tried. Of course this is due to wrong decision I took, Its hard to handle dynamic interaction between static html files JS redirection / routing functions.
 
-Netlify just doesn't handle it out of the box and there is no time left for me to figure it out, as well as there was not enough time for me to refactor de app in a way that it would handle.
+Netlify just doesn't handle it out of the box and there is no time left for me to figure it out, as well as there was not enough time for me to refactor the app in a way that it would handle.
 
 **So I hope you guys would consider running the app locally** with vite and at least have a look at it:
 
