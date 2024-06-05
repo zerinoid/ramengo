@@ -4,6 +4,7 @@ import submitData from './lib/submitData'
 
 window.addEventListener('onChangeIngredient', event => {
   reqObject[event.detail[0]] = event.detail[1]
+  checkButtonStatus()
 })
 
 const reqObject = {
@@ -17,15 +18,19 @@ const handleSubmit = async data => {
 }
 
 const submitOrderButton = document.querySelector('#submit')
-// submitOrderButton.disabled = true
-
-// if (!reqObject.brothId || !reqObject.proteinId) {
-//   submitOrderButton.disabled = true
-// } else {
-//   submitOrderButton.disabled = false
-// }
 
 submitOrderButton.addEventListener('click', () => handleSubmit(reqObject))
 
+const checkButtonStatus = () => {
+  submitOrderButton.disabled = true
+
+  if (reqObject.brothId === '0' || reqObject.proteinId === '0') {
+    submitOrderButton.disabled = true
+  } else {
+    submitOrderButton.disabled = false
+  }
+}
+
+checkButtonStatus()
 fetchIngredients('broths')
 fetchIngredients('proteins')
