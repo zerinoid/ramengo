@@ -103,7 +103,8 @@
     width: 190px;
     left: 273px;
     top: 522px;
-    text-align: left;
+    align-items: center;
+    justify-content: space-between;
     text-decoration: none;
     color: white;
     font-size: 1.4rem;
@@ -112,9 +113,10 @@
     background-color: var(--blue);
     border-radius: 100px;
     padding: 20px 16px;
+    letter-spacing: 2px;
 
     @media (min-width: 1024px) {
-      display: block;
+      display: flex;
     }
   }
 }
